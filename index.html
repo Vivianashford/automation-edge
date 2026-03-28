@@ -212,17 +212,25 @@
     });
 
     // Reveal animations
+    // Reveal animations with fallback
     const revealElements = document.querySelectorAll('.post-card, .newsletter-section, .section-header');
-    revealElements.forEach(el => el.classList.add('reveal'));
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealElements.forEach(el => observer.observe(el));
+    if ('IntersectionObserver' in window) {
+      revealElements.forEach(el => el.classList.add('reveal'));
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
+      revealElements.forEach(el => observer.observe(el));
+      // Fallback: reveal everything after 2s in case observer doesn't fire
+      setTimeout(() => {
+        revealElements.forEach(el => el.classList.add('revealed'));
+      }, 2000);
+    }
+    // No IntersectionObserver = everything visible by default (no reveal class added)
   </script>
 
 </body>

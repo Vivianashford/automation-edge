@@ -93,6 +93,7 @@ img {
    ============================================ */
 
 .reveal {
+  /* Fallback: visible without JS */
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1192,4 +1193,27 @@ img {
   .tool-card .tool-details {
     grid-template-columns: 1fr;
   }
+}
+
+/* Mobile: disable reveal animations - show everything immediately */
+@media (max-width: 768px) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .newsletter-section iframe {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .post-grid {
+    gap: 1rem;
+  }
+}
+
+/* Dark Substack embed wrapper */
+.newsletter-section iframe {
+  border-radius: 4px;
+  max-width: 100%;
 }
