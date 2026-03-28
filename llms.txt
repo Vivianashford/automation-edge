@@ -1,0 +1,26 @@
+# The Automation Edge
+
+> AI and automation intelligence for service business owners preparing for growth, scale, and exit.
+
+The Automation Edge is a publication by Jean Louis Hardy, founder of The Arena Partners. It covers the intersection of artificial intelligence, automation, and business valuation for service business owners in the $5M-$50M revenue range.
+
+## Key Topics
+- How AI impacts service business valuations and exit multiples
+- Specific AI tools for scheduling, customer service, financial analysis, and operations
+- Private equity trends in service business acquisitions
+- The 0.5x AI premium: how documented AI deployment drives higher EBITDA multiples
+- Quality-of-earnings report changes driven by AI metrics
+
+## Pages
+
+- [Home](https://vivianashford.github.io/automation-edge/): Blog index with latest articles
+- [About](https://vivianashford.github.io/automation-edge/about.html): About Jean Louis Hardy and The Automation Edge
+- [AI Is Destroying Software Valuations](https://vivianashford.github.io/automation-edge/ai-destroying-software-valuations.html): SaaS P/E multiples collapsed from 84x to 22.7x while service business multiples expand. Analysis of why PE firms are flooding into "boring" businesses.
+- [AI Is About to Become a Valuation Line Item](https://vivianashford.github.io/automation-edge/ai-valuation-line-item.html): How Revenium, Xero/Anthropic, and ServiceTitan are making AI efficiency metrics standard in quality-of-earnings reports.
+- [5 AI Tools Every Service Business Should Implement Before Selling](https://vivianashford.github.io/automation-edge/five-ai-tools-before-selling.html): Practical guide to AI scheduling, customer service, financial analysis, inventory management, and marketing automation with costs and ROI metrics.
+- [The 0.5x AI Premium](https://vivianashford.github.io/automation-edge/the-05x-ai-premium.html): Detailed case study showing how an $8M plumbing company creates $1.9M in additional exit value through AI deployment.
+
+## Related
+- [The Arena Partners](https://thearenapartners.com): Exit advisory for service business owners
+- [Free Exit Assessment](https://thearenapartners.com/assessment.html): AI readiness and exit risk assessment
+- [Business Valuation Calculator](https://thearenapartners.com/calculator.html): Free EBITDA-based valuation tool

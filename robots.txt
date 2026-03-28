@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vivianashford.github.io/automation-edge/sitemap.xml
