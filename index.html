@@ -2,32 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Automation Edge — AI &amp; Automation Intelligence for Service Business Owners</title>
+  <title>The Automation Edge — AI & Automation Intelligence for Service Business Owners</title>
   <meta name="description" content="Expert insights on AI and automation for service business owners preparing for growth, scale, and exit. Written by Jean Louis Hardy.">
   <meta name="author" content="Jean Louis Hardy">
   <link rel="canonical" href="https://vivianashford.github.io/automation-edge/">
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="The Automation Edge — AI &amp; Automation Intelligence for Service Business Owners">
+  <meta property="og:title" content="The Automation Edge — AI & Automation Intelligence for Service Business Owners">
   <meta property="og:description" content="Expert insights on AI and automation for service business owners preparing for growth, scale, and exit.">
   <meta property="og:url" content="https://vivianashford.github.io/automation-edge/">
   <meta property="og:site_name" content="The Automation Edge">
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Automation Edge">
-  <meta name="twitter:description" content="AI &amp; Automation Intelligence for Service Business Owners">
+  <meta name="twitter:description" content="AI & Automation Intelligence for Service Business Owners">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SDMM90P63D"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -36,7 +28,6 @@
     gtag('config', 'G-SDMM90P63D');
   </script>
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,58 +35,429 @@
     "name": "The Automation Edge",
     "description": "AI & Automation Intelligence for Service Business Owners",
     "url": "https://vivianashford.github.io/automation-edge/",
-    "author": {
-      "@type": "Person",
-      "name": "Jean Louis Hardy"
-    }
+    "author": { "@type": "Person", "name": "Jean Louis Hardy" }
   }
   </script>
+
+  <style>
+    /* ALL styles inline - no external CSS dependency for the index page */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #000000;
+      --surface: #111111;
+      --card: #161616;
+      --border: #222222;
+      --gold: #C9A84C;
+      --green: #00D26A;
+      --cyan: #00C9DB;
+      --white: #FFFFFF;
+      --gray: #888888;
+      --muted: #555555;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-brand span { color: var(--gold); }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* TICKER */
+    .ticker {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      height: 28px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 24px;
+      white-space: nowrap;
+      animation: scroll-ticker 30s linear infinite;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--green);
+      letter-spacing: 0.05em;
+    }
+
+    .ticker-dot { color: var(--muted); }
+
+    @keyframes scroll-ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 140px 24px 60px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--green);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .arena-wordmark {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .hero .tagline {
+      color: var(--gray);
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--gold);
+      padding: 12px 28px;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* POSTS SECTION */
+    .posts-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    .section-label {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .section-desc {
+      color: var(--gray);
+      font-size: 0.9rem;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    /* POST CARDS - no animation, always visible */
+    .post-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 28px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .post-card:hover {
+      border-color: var(--gold);
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .post-tag {
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .post-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .post-card h3 a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .post-card h3 a:hover {
+      color: var(--gold);
+    }
+
+    .post-excerpt {
+      color: var(--gray);
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .read-more {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+      text-align: center;
+    }
+
+    .newsletter-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 40px 28px;
+    }
+
+    .newsletter-box h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .newsletter-box p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+
+    .newsletter-box iframe {
+      border: none;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .footer a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer a:hover { color: var(--white); }
+
+    .footer-legal {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.95);
+        padding: 16px 24px;
+        gap: 12px;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-toggle { display: block; }
+      .hero { padding: 100px 20px 40px; }
+      .hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+      .posts-section { padding: 24px 16px 40px; }
+      .post-card { padding: 20px; }
+      .newsletter { padding: 24px 16px 40px; }
+      .newsletter-box { padding: 28px 20px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .ticker { top: 56px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- Navigation -->
-  <nav class="site-nav" id="siteNav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-brand">The Automation <span>Edge</span></a>
-      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="https://thearenapartners.substack.com" target="_blank" rel="noopener">Newsletter</a></li>
-      </ul>
-    </div>
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">The Automation <span>Edge</span></a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://thearenapartners.substack.com" target="_blank" rel="noopener">Newsletter</a></li>
+    </ul>
   </nav>
 
-  <!-- Data Ticker -->
-  <div class="ticker-bar">
+  <!-- Ticker -->
+  <div class="ticker">
     <div class="ticker-track">
       <span>PE DRY POWDER: $2.6T</span>
-      <span class="ticker-dot">●</span>
-      <span>SERVICE M&amp;A MULTIPLES: 5.2–7.8x</span>
-      <span class="ticker-dot">●</span>
+      <span class="ticker-dot">&#9679;</span>
+      <span>SERVICE M&amp;A MULTIPLES: 5.2-7.8x</span>
+      <span class="ticker-dot">&#9679;</span>
       <span>AI ADOPTION: +340% YoY</span>
-      <span class="ticker-dot">●</span>
+      <span class="ticker-dot">&#9679;</span>
       <span>SBA 7(a) RATE: 6.5%</span>
-      <span class="ticker-dot">●</span>
+      <span class="ticker-dot">&#9679;</span>
       <span>AI-READY EXITS: +0.5x PREMIUM</span>
-      <span class="ticker-dot">●</span>
+      <span class="ticker-dot">&#9679;</span>
       <span>SERVICETITAN MKTCAP: $9.2B</span>
-      <span class="ticker-dot">●</span>
+      <span class="ticker-dot">&#9679;</span>
       <span>PE DRY POWDER: $2.6T</span>
-      <span class="ticker-dot">●</span>
-      <span>SERVICE M&amp;A MULTIPLES: 5.2–7.8x</span>
-      <span class="ticker-dot">●</span>
+      <span class="ticker-dot">&#9679;</span>
+      <span>SERVICE M&amp;A MULTIPLES: 5.2-7.8x</span>
+      <span class="ticker-dot">&#9679;</span>
       <span>AI ADOPTION: +340% YoY</span>
-      <span class="ticker-dot">●</span>
+      <span class="ticker-dot">&#9679;</span>
       <span>SBA 7(a) RATE: 6.5%</span>
-      <span class="ticker-dot">●</span>
+      <span class="ticker-dot">&#9679;</span>
       <span>AI-READY EXITS: +0.5x PREMIUM</span>
-      <span class="ticker-dot">●</span>
+      <span class="ticker-dot">&#9679;</span>
       <span>SERVICETITAN MKTCAP: $9.2B</span>
-      <span class="ticker-dot">●</span>
+      <span class="ticker-dot">&#9679;</span>
     </div>
   </div>
 
@@ -112,68 +474,62 @@
   </section>
 
   <!-- Posts -->
-  <section class="section" id="posts">
-    <div class="section-header">
-      <h2>Latest</h2>
-      <p>Research, frameworks, and real-world data on AI for service businesses.</p>
-    </div>
+  <section class="posts-section" id="posts">
+    <h2 class="section-label">Latest</h2>
+    <p class="section-desc">Research, frameworks, and real-world data on AI for service businesses.</p>
 
-    <div class="post-grid">
+    <article class="post-card">
+      <div class="post-meta">
+        <span class="post-tag">Market Analysis</span>
+        <span>2026.03.27</span>
+        <span>&#183;</span>
+        <span>10 min</span>
+      </div>
+      <h3><a href="ai-destroying-software-valuations.html">AI Is Destroying Software Valuations. Here's Why That's Great News for Your Business.</a></h3>
+      <p class="post-excerpt">SaaS P/E multiples collapsed from 84x to 22.7x - below the S&P 500 for the first time ever. AI is eating the per-seat model alive. But service businesses with human relationships and boots-on-the-ground operations? They're the smart money bet now.</p>
+      <a href="ai-destroying-software-valuations.html" class="read-more">Read article</a>
+    </article>
 
-      <article class="post-card">
-        <div class="post-meta">
-          <span class="post-tag">Market Analysis</span>
-          <span>2026.03.27</span>
-          <span>·</span>
-          <span>10 min</span>
-        </div>
-        <h3><a href="ai-destroying-software-valuations.html">AI Is Destroying Software Valuations. Here's Why That's Great News for Your Business.</a></h3>
-        <p class="post-excerpt">SaaS P/E multiples collapsed from 84x to 22.7x - below the S&P 500 for the first time ever. AI is eating the per-seat model alive. But service businesses with human relationships and boots-on-the-ground operations? They're the smart money bet now.</p>
-        <a href="ai-destroying-software-valuations.html" class="read-more">Read article</a>
-      </article>
+    <article class="post-card">
+      <div class="post-meta">
+        <span class="post-tag">Valuation</span>
+        <span>2026.03.27</span>
+        <span>&#183;</span>
+        <span>8 min</span>
+      </div>
+      <h3><a href="ai-valuation-line-item.html">AI Is About to Become a Valuation Line Item. Here's What That Means for Your Exit.</a></h3>
+      <p class="post-excerpt">Revenium's AI Outcomes platform signals a shift. Within two years, AI efficiency metrics will be standard in every quality-of-earnings report. First movers will capture higher multiples.</p>
+      <a href="ai-valuation-line-item.html" class="read-more">Read article</a>
+    </article>
 
-      <article class="post-card">
-        <div class="post-meta">
-          <span class="post-tag">Valuation</span>
-          <span>2026.03.27</span>
-          <span>·</span>
-          <span>8 min</span>
-        </div>
-        <h3><a href="ai-valuation-line-item.html">AI Is About to Become a Valuation Line Item. Here's What That Means for Your Exit.</a></h3>
-        <p class="post-excerpt">Revenium's AI Outcomes platform signals a shift. Within two years, AI efficiency metrics will be standard in every quality-of-earnings report. First movers will capture higher multiples.</p>
-        <a href="ai-valuation-line-item.html" class="read-more">Read article</a>
-      </article>
+    <article class="post-card">
+      <div class="post-meta">
+        <span class="post-tag">Playbook</span>
+        <span>2026.03.27</span>
+        <span>&#183;</span>
+        <span>10 min</span>
+      </div>
+      <h3><a href="five-ai-tools-before-selling.html">5 AI Tools Every Service Business Should Implement Before Selling</a></h3>
+      <p class="post-excerpt">A practical guide to the five AI implementations that show up in due diligence, reduce operational risk, and make buyers pay premium prices.</p>
+      <a href="five-ai-tools-before-selling.html" class="read-more">Read article</a>
+    </article>
 
-      <article class="post-card">
-        <div class="post-meta">
-          <span class="post-tag">Playbook</span>
-          <span>2026.03.27</span>
-          <span>·</span>
-          <span>10 min</span>
-        </div>
-        <h3><a href="five-ai-tools-before-selling.html">5 AI Tools Every Service Business Should Implement Before Selling</a></h3>
-        <p class="post-excerpt">A practical guide to the five AI implementations that show up in due diligence, reduce operational risk, and make buyers pay premium prices.</p>
-        <a href="five-ai-tools-before-selling.html" class="read-more">Read article</a>
-      </article>
-
-      <article class="post-card">
-        <div class="post-meta">
-          <span class="post-tag">Exit Strategy</span>
-          <span>2026.03.27</span>
-          <span>·</span>
-          <span>11 min</span>
-        </div>
-        <h3><a href="the-05x-ai-premium.html">The 0.5x AI Premium: How Smart Automation Adds to Your Exit Multiple</a></h3>
-        <p class="post-excerpt">Real math on how AI automation translates to higher EBITDA multiples. An $8M plumbing company case study shows $1.08M in additional exit value from a single year of AI deployment.</p>
-        <a href="the-05x-ai-premium.html" class="read-more">Read article</a>
-      </article>
-
-    </div>
+    <article class="post-card">
+      <div class="post-meta">
+        <span class="post-tag">Exit Strategy</span>
+        <span>2026.03.27</span>
+        <span>&#183;</span>
+        <span>11 min</span>
+      </div>
+      <h3><a href="the-05x-ai-premium.html">The 0.5x AI Premium: How Smart Automation Adds to Your Exit Multiple</a></h3>
+      <p class="post-excerpt">Real math on how AI automation translates to higher EBITDA multiples. An $8M plumbing company case study shows $1.08M in additional exit value from a single year of AI deployment.</p>
+      <a href="the-05x-ai-premium.html" class="read-more">Read article</a>
+    </article>
   </section>
 
   <!-- Newsletter -->
-  <section class="section">
-    <div class="newsletter-section">
+  <section class="newsletter">
+    <div class="newsletter-box">
       <h2>Stay on the Edge</h2>
       <p>Weekly insights on AI, automation, and exit strategy for service business owners. No fluff. Just signal.</p>
       <iframe src="https://thearenapartners.substack.com/embed" width="480" height="150" style="background: transparent;" frameborder="0" scrolling="no"></iframe>
@@ -181,74 +537,28 @@
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-col">
-        <div class="footer-col-label">Navigate</div>
-        <ul class="footer-links">
-          <li><a href="index.html">Blog</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="https://thearenapartners.substack.com" target="_blank" rel="noopener">Newsletter</a></li>
-        </ul>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-label">Navigate</div>
+        <a href="index.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="https://thearenapartners.substack.com" target="_blank" rel="noopener">Newsletter</a>
       </div>
-      <div class="footer-col">
-        <div class="footer-col-label">Subscribe</div>
-        <div class="footer-newsletter">
-          <iframe src="https://thearenapartners.substack.com/embed" width="300" height="80" style="background: transparent;" frameborder="0" scrolling="no"></iframe>
+      <div>
+        <div class="footer-label">Subscribe</div>
+        <iframe src="https://thearenapartners.substack.com/embed" width="280" height="80" style="background: transparent;" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div>
+        <div class="footer-label">Legal</div>
+        <div class="footer-legal">
+          &copy; 2026 The Automation Edge<br>
+          Written by Jean Louis Hardy<br>
+          A publication of The Arena Partners
         </div>
-      </div>
-      <div class="footer-col footer-legal">
-        <div class="footer-col-label">Legal</div>
-        <p>&copy; 2026 The Automation Edge</p>
-        <p>Written by Jean Louis Hardy</p>
-        <p>A publication of The Arena Partners</p>
       </div>
     </div>
   </footer>
-
-  <script>
-    // Scroll progress
-    const progressBar = document.getElementById('scrollProgress');
-    window.addEventListener('scroll', () => {
-      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      progressBar.style.width = (scrollTop / scrollHeight) * 100 + '%';
-    });
-
-    // Nav show/hide on scroll direction
-    let lastScrollY = 0;
-    const nav = document.getElementById('siteNav');
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        nav.classList.add('nav-hidden');
-      } else {
-        nav.classList.remove('nav-hidden');
-      }
-      lastScrollY = currentScrollY;
-    });
-
-    // Reveal animations
-    // Reveal animations with fallback
-    const revealElements = document.querySelectorAll('.post-card, .newsletter-section, .section-header');
-    if ('IntersectionObserver' in window) {
-      revealElements.forEach(el => el.classList.add('reveal'));
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
-      revealElements.forEach(el => observer.observe(el));
-      // Fallback: reveal everything after 2s in case observer doesn't fire
-      setTimeout(() => {
-        revealElements.forEach(el => el.classList.add('revealed'));
-      }, 2000);
-    }
-    // No IntersectionObserver = everything visible by default (no reveal class added)
-  </script>
 
 </body>
 </html>
