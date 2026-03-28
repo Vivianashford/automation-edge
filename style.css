@@ -365,7 +365,7 @@ img {
 .section {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 6rem 2rem;
+  padding: 3rem 2rem;
 }
 
 .section-header {
