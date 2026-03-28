@@ -61,9 +61,27 @@
     </div>
   </nav>
 
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- Hero -->
   <section class="hero">
     <h1>AI &amp; Automation Intelligence<br>for <span>Service Business Owners</span></h1>
+
+    <!-- Arena Logo -->
+    <div class="arena-logo-container">
+      <svg width="72" height="80" viewBox="0 0 72 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Shield/hexagon shape -->
+        <path d="M36 2L68 18V54C68 54 68 66 36 78C4 66 4 54 4 54V18L36 2Z" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <path d="M36 8L62 22V52C62 52 62 62 36 72C10 62 10 52 10 52V22L36 8Z" stroke="#C9A84C" stroke-width="0.5" fill="rgba(201,168,76,0.03)"/>
+        <!-- Bold A mark -->
+        <path d="M36 22L50 58H44L41 50H31L28 58H22L36 22Z M33 45H39L36 35L33 45Z" fill="#C9A84C"/>
+        <!-- Accent diamond -->
+        <path d="M36 14L40 18L36 22L32 18L36 14Z" fill="#E3C96E" opacity="0.5"/>
+      </svg>
+      <div class="arena-logo-text">Powered by The Arena Partners</div>
+    </div>
+
     <p class="tagline">You built something valuable. AI makes it worth more. Insights on how smart automation drives higher valuations, smoother operations, and stronger exits.</p>
     <a href="#posts" class="hero-cta">Read the Latest ↓</a>
   </section>
@@ -133,6 +151,31 @@
       <p>&copy; 2026 The Automation Edge. Written by Jean Louis Hardy.</p>
     </div>
   </footer>
+
+  <!-- Scroll Progress & Reveal Animations -->
+  <script>
+    // Scroll progress bar
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = (scrollTop / scrollHeight) * 100;
+      progressBar.style.width = progress + '%';
+    });
+
+    // Intersection Observer for reveal animations
+    const revealElements = document.querySelectorAll('.post-card, .newsletter-section, .section-header');
+    revealElements.forEach(el => el.classList.add('reveal'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealElements.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>

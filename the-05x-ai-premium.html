@@ -60,6 +60,9 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- Navigation -->
   <nav class="site-nav">
     <div class="nav-inner">
@@ -350,6 +353,21 @@
       <p>&copy; 2026 The Automation Edge. Written by Jean Louis Hardy.</p>
     </div>
   </footer>
+
+  <script>
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progressBar.style.width = (scrollTop / scrollHeight) * 100 + '%';
+    });
+    const revealEls = document.querySelectorAll('.callout, .math-box, .tool-card, .article-cta, .related-card');
+    revealEls.forEach(el => el.classList.add('reveal'));
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => obs.observe(el));
+  </script>
 
 </body>
 </html>

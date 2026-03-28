@@ -39,6 +39,9 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- Navigation -->
   <nav class="site-nav">
     <div class="nav-inner">
@@ -55,6 +58,18 @@
   <!-- About Hero -->
   <section class="about-hero">
     <h1>About Jean Louis Hardy</h1>
+
+    <!-- Arena Logo -->
+    <div class="arena-logo-container">
+      <svg width="60" height="66" viewBox="0 0 72 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M36 2L68 18V54C68 54 68 66 36 78C4 66 4 54 4 54V18L36 2Z" stroke="#C9A84C" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <path d="M36 8L62 22V52C62 52 62 62 36 72C10 62 10 52 10 52V22L36 8Z" stroke="#C9A84C" stroke-width="0.5" fill="rgba(201,168,76,0.03)"/>
+        <path d="M36 22L50 58H44L41 50H31L28 58H22L36 22Z M33 45H39L36 35L33 45Z" fill="#C9A84C"/>
+        <path d="M36 14L40 18L36 22L32 18L36 14Z" fill="#E3C96E" opacity="0.5"/>
+      </svg>
+      <div class="arena-logo-text">Powered by The Arena Partners</div>
+    </div>
+
     <p class="subtitle">AI &amp; Automation Strategist for Service Business Owners</p>
   </section>
 
@@ -126,6 +141,21 @@
       <p>&copy; 2026 The Automation Edge. Written by Jean Louis Hardy.</p>
     </div>
   </footer>
+
+  <script>
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progressBar.style.width = (scrollTop / scrollHeight) * 100 + '%';
+    });
+    const revealEls = document.querySelectorAll('.article-cta, .newsletter-section');
+    revealEls.forEach(el => el.classList.add('reveal'));
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => obs.observe(el));
+  </script>
 
 </body>
 </html>
