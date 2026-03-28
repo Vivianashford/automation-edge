@@ -393,7 +393,7 @@ img {
 
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 1.5rem;
 }
 
@@ -1195,33 +1195,52 @@ img {
   }
 }
 
-/* Mobile: disable reveal animations - show everything immediately */
-
-  .post-grid {
-    grid-template-columns: 1fr !important;
+/* Mobile: full fix for all mobile issues */
+@media (max-width: 768px) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 
   .hero {
     min-height: auto !important;
     padding: 6rem 1.5rem 4rem !important;
   }
-@media (max-width: 768px) {
-  .reveal {
+
+  .post-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  .post-card {
+    width: 100% !important;
     opacity: 1 !important;
     transform: none !important;
   }
-  
+
+  .section {
+    padding: 3rem 1rem !important;
+  }
+
+  .section-header {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .newsletter-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .newsletter-section iframe {
     max-width: 100% !important;
     width: 100% !important;
   }
-  
-  .post-grid {
-    gap: 1rem;
-  }
 }
 
-/* Dark Substack embed wrapper */
+/* Substack embed styling */
 .newsletter-section iframe {
   border-radius: 4px;
   max-width: 100%;
